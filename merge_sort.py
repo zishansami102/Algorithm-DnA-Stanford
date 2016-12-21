@@ -7,20 +7,19 @@ def mergesort(A):
 	n = len(A)
 	if n==1:
 		return A
-
+#splitting in two parts
 	B = list()
 	for i in range( 0, n//2):
 		B.append(A[i])
 
-
 	C = list()
 	for i in range(n//2, n):
 		C.append(A[i])
-
-
+# sorting the splitted parts
 	if n > 2:
 		B = mergesort(B)
 		C = mergesort(C)
+#merging the splitted parts
 	j = 0
 	k = 0
 	D = list()
@@ -43,7 +42,7 @@ def mergesort(A):
 
 array = [24, 12,16,9,5,4,23,18,14,1,10,17,2,13,3,11,21,6,25,7,22,15,19,20,8]
 sorted = mergesort(array)
-
+#printing the array
 for element in sorted:
 	print(element)
 
