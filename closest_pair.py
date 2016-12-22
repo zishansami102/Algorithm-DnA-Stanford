@@ -2,10 +2,12 @@ import random
 import sys
 import os
 
+#calculate distance between two points
 def dist(p, q):
 	distance = ((p[0]-q[0])**2 + (p[1]- q[1])**2)**(1/2)
 	return distance
 
+#sorting piont set wrt to x axis
 def sort_x(pset):
 	n = len(pset)
 	if n==1:
@@ -43,7 +45,7 @@ def sort_x(pset):
 				k = k + 1
 	return D
 
-
+#sorting the points set wrt y axis
 def sort_y(pset):
 	n = len(pset)
 	if n==1:
@@ -81,6 +83,7 @@ def sort_y(pset):
 				k = k + 1
 	return D
 
+#getting closest pairs if one point is on left split and other is on right
 def closest_split_pair( px, py, delta):
 	n = len(px)
 	x_mid = px[n//2][0]
@@ -101,6 +104,7 @@ def closest_split_pair( px, py, delta):
 				best = distance
 	return best_pair
 
+#getting closest pairs in a point set
 def closest_pair(px, py):
 	n = len(px)
 	if n==2:
@@ -139,7 +143,7 @@ def closest_pair(px, py):
 	else:
 		return best_pair
 
-
+#an example set
 point_set = [[5,3],[7,12],[3,5],[12,7],[6,6],[5,5]]
 px = sort_x(point_set)
 py = sort_y(point_set)
